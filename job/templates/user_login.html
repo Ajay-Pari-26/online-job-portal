@@ -1,0 +1,45 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html'%}
+
+<!--
+# Background image for admin page:
+<div class="container-fluid" style="margin-top:1%">
+    <img src="{% static 'images/background.png'%}" style="height:100%;width:100%">
+</div>
+-->
+<marquee style="font-family:'Monotype Corsiva';font-size:25px;color:darkcyan;background-color:black;font-weight:bold;margin-top:1%">
+    User Login
+</marquee>
+
+<hr>
+
+<form class="container mt-5" method="post">
+    {% csrf_token %}
+    <label><b>Email ID</b></label>
+    <input type="email" class="form-control" name="uname" placeholder="Enter Email ID" required>
+    <br>
+    <label><b>Password</b></label>
+    <input type="password" class="form-control" name="pwd" placeholder="Enter Password" required>
+    <br>
+    <input type="submit" value="login" class="btn btn-primary" style="margin-top:2%;color:white;background-color:green;border-radius:10px">
+
+    <a href="{% url 'user_signup' %}" style="margin-top:2%;color:white;background-color:green;border-radius:10px" class="btn btn-primary">Create An Account</a>
+</form>
+{% include 'footer.html' %}
+
+{% if error == "no" %}
+<script>
+    alert("login successful");
+    window.location = ("{% url "user_home" %}")
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert("Invalid login,try again..");
+</script>
+{% endif %}
+{% endblock %}

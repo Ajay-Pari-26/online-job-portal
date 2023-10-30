@@ -1,0 +1,68 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html'%}
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.3/css/all.css">
+<!--
+# Background image for admin page:
+<div class="container-fluid" style="margin-top:1%">
+    <img src="{% static 'images/background.png'%}" style="height:100%;width:100%">
+</div>
+-->
+<style>
+    .mydiv:hover{
+        box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+        transform:tranlateY(-20px)
+    }
+</style>
+
+
+<hr>
+<marquee style="font-family:'Monotype Corsiva';font-size:25px;color:darkcyan;background-color:black;font-weight:bold;margin-top:1%">
+    Contact us
+</marquee>
+
+<hr>
+
+<div class="container mt-5">
+    <br><br>
+    <div class="row mt-5">
+        <div class="col-sm-3 mydiv">
+            <h4 class="text-center"><i class="fas fa-phone-square"></i>Contact</h4>
+            <p class="text-center">+91 9676820660</p>
+    
+        </div>
+
+        <div class="col-sm-3 mydiv">
+            <h4 class="text-center"><i class="fas fa-envelope"></i>Email Id</h4>
+            <p class="text-center">jobportal@gmail.com</p>
+    
+        </div>
+
+        <div class="col-sm-3 mydiv">
+            <h4 class="text-center"><i class="fas fa-address-card"></i>Address</h4>
+            <p class="text-center">ABC XYZ </p>
+    
+        </div>
+
+        <div class="col-sm-3 mydiv">
+            <h4 class="text-center"><i class="fas fa-clock"></i>Office Timings</h4>
+            <p class="text-center">10:00 A.M. to 07:00 P.M.</p>
+    
+        </div>
+
+    </div>
+
+</div>
+
+<br>
+<br>
+
+
+{% include 'footer.html' %}
+
+
+{% endblock %}
